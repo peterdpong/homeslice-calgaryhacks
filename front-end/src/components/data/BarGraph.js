@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar} from 'recharts'
 
-const BarGraph = (dataset, xdatakey, ydatakey) => {
+const BarGraph = ({dataset, xdatakey, ydatakey}) => {
   return(
     <BarChart
         width={600}
