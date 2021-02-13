@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
-import { Link } from 'react-router-dom'
+import { Box, Flex, Text, Button, Stack, Link } from "@chakra-ui/react";
+import { Link as ReactLink} from 'react-router-dom'
 import Logo from './Logo'
 
 const NavBar = (props) => {
@@ -23,9 +23,9 @@ const NavBar = (props) => {
 
 }
 
-const MenuItem = ({ children, isLast, to="/", ...rest }) => {
+const MenuItem = ({ children, isLast, to, ...rest }) => {
   return (
-    <Link to={to}>
+    <Link to={to} as={ReactLink}>
       <Text display="block" {...rest}>
         {children}
       </Text>
@@ -78,8 +78,8 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/">About Us</MenuItem>
-        <MenuItem to="/signup" isLast>
+        <MenuItem to="/about">About Us</MenuItem>
+        <MenuItem to="/explore" isLast>
           <Button
             size="sm"
             rounded="md"
