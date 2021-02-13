@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar"
 import { Container } from '@chakra-ui/react'
-import BarGraph from './components/data/BarGraph';
+import BarGraph from './components/data/BarGraph'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Container>
         Welcome to HomeSlice.
       </Container>
-
+      <BarGraph/>
       
     </div>
   );
