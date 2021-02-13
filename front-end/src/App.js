@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from "./components/navbar/NavBar"
 import { Container, Heading, Text, Button, Box } from '@chakra-ui/react'
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom'
-import BarGraph from './components/data/BarGraph'
+import TorontoPage from "./components/pages/Toronto";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
                 </Box>
             </Box>
     
-            <BarGraph/>
+            
 
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">HomeSlice's goal</Heading>
@@ -35,7 +35,7 @@ function App() {
           </Route>
           
           <Route path="/toronto">
-
+            <TorontoPage/>
           </Route>
           <Route path="/about">
 
