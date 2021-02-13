@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from "./components/navbar/NavBar"
 import { Container, Heading, Text, Button, Box } from '@chakra-ui/react'
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom'
+import BarGraph from './components/data/BarGraph'
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
                   <Text fontSize="lg">INFO ABOUT Problem</Text>
                 </Box>
             </Box>
+    
+            <BarGraph/>
 
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">HomeSlice's goal</Heading>
