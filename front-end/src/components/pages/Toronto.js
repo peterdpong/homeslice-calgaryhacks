@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { Container, Flex, Heading, Box, Text, Select, Center, Image, OrderedList, ListItem } from '@chakra-ui/react';
+import { Container, Flex, Heading, Box, Text, Select, Center, Image, OrderedList, ListItem, Spacer, Divider, color } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
@@ -103,7 +103,15 @@ const TorontoPage = () => {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <GeoJSON data={neighbourhoods.features} onEachFeature={function(feature,layer) {return layer.bindPopup(feature.properties.AREA_NAME)}} />
+            <GeoJSON 
+              data={neighbourhoods.features}
+              onEachFeature={function(feature, layer) {return layer.bindPopup(feature.properties.AREA_NAME)}} 
+              key={neighbourhood}
+              style={function (feature) {
+                console.log(neighbourhood);
+                console.log(feature.properties.AREA_SHORT_CODE);
+                console.log(neighbourhood == feature.properties.AREA_SHORT_CODE);
+                if (parseInt(neighbourhood) + 1 == parseInt(feature.properties.AREA_SHORT_CODE)) {return {color:"#ff0000"}} else {return {color:"#24ff1c"}}}}/>
           </MapContainer>
           <BarGraph dataset={dataParsed} id={neighbourhood}/>
         </Flex>
