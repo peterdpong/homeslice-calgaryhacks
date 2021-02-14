@@ -4,7 +4,7 @@ import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
-import neighbourhoods from "../../Datasets/Neighbourhoods.geojson"
+import neighbourhoods from "../../Datasets/Neighbourhoods.json"
 
 const TorontoPage = () => {
   const [neighbourhood, setNeighbourhood] = useState(0);
@@ -83,7 +83,7 @@ const TorontoPage = () => {
         
         
       <Box height="1000" width="1000">
-        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+        <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -92,7 +92,7 @@ const TorontoPage = () => {
         </MapContainer>
       </Box>
 
-      <BarGraph dataset={dataParsed} id={neighbourhood} />
+      <BarGraph dataset={dataParsed} id={neighbourhood}/>
 
     </div>
   )
