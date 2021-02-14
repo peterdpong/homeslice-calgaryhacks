@@ -93,7 +93,7 @@ const VancouverPage = () => {
           </PieChart>
         </ResponsiveContainer>
         
-        <Text fontSize="xl">Non-Social Housing Projects</Text>
+        <Text fontSize="xl">Non-Market Housing Projects</Text>
       </Box>
       <Box flex="1" textAlign="center">
         <ResponsiveContainer width="90%" height="90%">
@@ -106,7 +106,7 @@ const VancouverPage = () => {
             <Line type="monotone" dataKey="count" stroke="#8884d8" />
           </LineChart>
         </ResponsiveContainer>
-        <Text fontSize="2xl"># of Non-Social Housing Opened</Text>
+        <Text fontSize="2xl"># of Non-Market Housing Opened</Text>
       </Box>
       <Box flex="1" textAlign="center">
         <BarGraph dataset={clientData} xKey="name" barKey="value" width={600}/>
