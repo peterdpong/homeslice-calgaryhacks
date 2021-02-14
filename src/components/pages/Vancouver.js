@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Heading, Flex, Box, Text, Image } from '@chakra-ui/react'
+import { Container, Heading, Flex, Box, Text, Image, Center } from '@chakra-ui/react'
 import { PieChart, Pie, Tooltip, Legend, Cell, ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Line } from 'recharts'
 import data from '../../Datasets/NonMarketHousingVancouver.json'
 import BarGraph from '../data/BarGraph'
@@ -74,15 +74,18 @@ const VancouverPage = () => {
 
   return (
     <div>
-    <Container marginBottom="10" centerContent>
+     <Center>
       <Image
             w = '500px' mx = 'auto' my = {-50}
             src = './vancouverSil.png'
             />
-      <Heading fontSize="4xl">Vancouver Housing Overview</Heading>
-    </Container>
+       </Center>
+       <Center>   
+      <Heading marginBottom = "10" fontSize="4xl">Vancouver Housing Overview</Heading>
+      </Center>  
+
     <Flex flexDirection="row" marginInline="5rem">
-      <Box flex="1" textAlign="center">
+      <Box flex="1" textAlign="center" marginBottom = "3">
         <ResponsiveContainer width="90%" height="90%">
           <PieChart  margin={{ top: 0, left: 0, right: 0, bottom: 0 }} width={350} height={350}>
             <Tooltip />
@@ -95,7 +98,7 @@ const VancouverPage = () => {
         
         <Text fontSize="xl">Non-Market Housing Projects</Text>
       </Box>
-      <Box flex="1" textAlign="center">
+      <Box flex="1" textAlign="center" marginBottom = "3">
         <ResponsiveContainer width="90%" height="90%">
           <LineChart width={350} height={250} data={yearInfo}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -106,11 +109,11 @@ const VancouverPage = () => {
             <Line type="monotone" dataKey="count" stroke="#8884d8" />
           </LineChart>
         </ResponsiveContainer>
-        <Text fontSize="2xl"># of Non-Market Housing Opened</Text>
+        <Text fontSize="xl"># of Non-Market Housing Opened</Text>
       </Box>
-      <Box flex="1" textAlign="center">
+      <Box flex="1" textAlign="center" marginBottom = "10">
         <BarGraph dataset={clientData} xKey="name" barKey="value" width={600}/>
-        <Text>Category of people who use these homes</Text>
+        <Text fontSize = "x1"> Category of people who use these homes</Text>
       </Box>
     </Flex>
 

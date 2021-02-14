@@ -62,8 +62,8 @@ const TorontoPage = () => {
             <Heading fontSize="3xl" marginTop="50">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
             <Text fontSize="2xl">Average property price</Text>
           </Box>
-          <Box flex="1" my = {7} textAlign="center" marginInline="100">
-          <Heading fontSize="3xl">Top 5 Neighbourhood in need of Housing</Heading>
+          <Box flex="1" my = {6} textAlign="center" marginInline="100">
+          <Heading marginBottom = "2" fontSize="3xl">Top 5 Neighbourhoods in need of Housing</Heading>
             <OrderedList>
               <ListItem><b>{sortedWaitingList[0].name}</b> <br/> WaitList Length: {sortedWaitingList[0].value}</ListItem>
               <ListItem><b>{sortedWaitingList[1].name}</b> <br/> WaitList Length: {sortedWaitingList[1].value}</ListItem>
@@ -74,7 +74,7 @@ const TorontoPage = () => {
             
           </Box>
           <Box flex="1" my = {7} textAlign="center">
-          <LineChart width={650} height={250} data={overallSocialHousingData}>
+          <LineChart width={600} height={250} data={overallSocialHousingData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
             <YAxis />
@@ -86,7 +86,7 @@ const TorontoPage = () => {
           </Box>
         </Flex>
 
-        <Center marginInline="5rem">
+        <Center marginInline="5rem" marginTop ="2">
           <Heading padding = "3" margin="3" fontSize="3xl">Specific Neighbourhood Data</Heading>
           <Select variant = "filled" onChange={onChangeNeighbourhood} padding = "2">
             {torontoSocialHousingData.map((element) => {
@@ -97,7 +97,7 @@ const TorontoPage = () => {
           </Select>
         </Center>
         
-        <Flex marginInline="5rem" marginBottom="15">
+        <Flex marginInline="5rem" marginBottom="15" marginTop = "2">
           <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

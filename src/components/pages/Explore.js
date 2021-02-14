@@ -5,12 +5,13 @@ import { Link as ReactLink } from 'react-router-dom'
 const ExplorePage = () => {
   return(
     <div>
-      
-      <Container centerContent padding="5">
+
+        <Center> 
         <Heading fontWeight="extrabold" fontSize="4xl">Explore</Heading> 
-        <Text>HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
-        Click below to go to the City's Data Page.</Text>
-      </Container>
+        </Center>
+        <Center><Text>HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
+        Click below to go to the City's Data Page.</Text></Center>
+        
 
         <Flex color="white" padding="2">
 
