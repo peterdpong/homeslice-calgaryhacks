@@ -73,9 +73,11 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 630.2 km squared</Text>
 
               <Center padding="3">
-              <Link href="https://homeslice.tech/toronto" isExternal> <Button colorScheme = "blue"> 
+
+              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
               Click here
-              </Button> </Link>
+              </Button>
+              
               </Center>
 
             </Box>
@@ -92,9 +94,11 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 115 km squared</Text>
 
               <Center padding="3">
-              <Link href="https://homeslice.tech/toronto" isExternal>> <Button colorScheme = "blue"> 
+
+              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
               Click here
-              </Button> </Link>
+              </Button>
+
               </Center>
             </Box>
 
@@ -110,9 +114,11 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 825.3 km squared</Text>
 
               <Center padding="3">
-              <Link href="https://homeslice.tech/toronto" isExternal> <Button colorScheme = "blue"> 
+
+              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
               Click here
-              </Button> </Link>
+              </Button>
+
               </Center>
             </Box>
 
