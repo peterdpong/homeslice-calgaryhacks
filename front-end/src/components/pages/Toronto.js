@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { Container, Flex, Heading, Box, Text, Select, Spacer, Center, Divider } from '@chakra-ui/react';
+import { Container, Flex, Heading, Box, Text, Select, Spacer, Center, Divider, Image } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
@@ -41,7 +41,14 @@ const TorontoPage = () => {
 
   return (
     <div>
-        <Center> <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> </Center>
+        <Center> 
+          <Image
+            w = '500px' mx = 'auto' my = {-30}
+            src = './torontoSil.png'
+            />
+          <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> 
+        </Center>
+      <Container marginBottom="10" centerContent>
         <Flex flexDirection="row">
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
@@ -85,7 +92,7 @@ const TorontoPage = () => {
           </MapContainer>
           <BarGraph dataset={dataParsed} id={neighbourhood}/>
         </Flex>
-
+      </Container>
     </div>
   )
 }

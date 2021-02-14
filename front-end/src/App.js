@@ -4,6 +4,8 @@ import { Container, Flex, Heading, Text, Button, Box, Image, Center} from '@chak
 import { Search2Icon } from '@chakra-ui/icons'
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import TorontoPage from "./components/pages/Toronto";
+import ExplorePage from './components/pages/Explore';
+import VancouverPage from './components/pages/Vancouver';
 
 function App() {
   return (
@@ -47,83 +49,11 @@ function App() {
           <Route path="/toronto">
             <TorontoPage/>
           </Route>
-          <Route path="/about">
-
+          <Route path="/vancouver">
+            <VancouverPage/>
           </Route>
           <Route path="/explore">
-            
-            <Center fontSize='lg' padding="5">
-            HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
-            Click below to go to the City's Data Page.
-            </Center>
-
-            <Flex color="white" padding="2">
-
-            <Box variant="Outline" flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
-              <Center fontWeight="bold" color="Black" padding="1">
-                TORONTO
-              </Center>
-
-              <Image src="toronto.png" padding="1"/>
-
-              <Text padding="1" color="black">
-                Capital of Ontario, the largest city in Canada. 
-              </Text>
-              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 2.93 Million</Text>
-              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 630.2 km squared</Text>
-
-              <Center padding="3">
-
-              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
-              Click here
-              </Button>
-              
-              </Center>
-
-            </Box>
-
-            <Box flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
-              <Center fontWeight="bold" color="Black" padding="1">
-                VANCOUVER
-              </Center>
-              <Image src="vancouver.png" padding="1"/>
-              <Text padding="1" color="black">
-                Where the ocean meets the mountains. 
-              </Text>
-              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 0.7 Million</Text>
-              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 115 km squared</Text>
-
-              <Center padding="3">
-
-              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
-              Click here
-              </Button>
-
-              </Center>
-            </Box>
-
-            <Box flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
-              <Center fontWeight="bold" color="Black" padding="1">
-                CALGARY
-              </Center>
-              <Image src="calgary.png" padding="1"/>
-              <Text padding="1" color="black">
-                Alberta's biggest city, as well as Canada's sunniest.
-              </Text>
-              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 1.3 Million</Text>
-              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 825.3 km squared</Text>
-
-              <Center padding="3">
-
-              <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
-              Click here
-              </Button>
-
-              </Center>
-            </Box>
-
-            </Flex>
-
+            <ExplorePage/>
           </Route>
           
           
