@@ -4,7 +4,7 @@ import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
-import neighbourhoods from "../../Datasets/Neighbourhoods.json"
+import neighbourhoods from "../../Datasets/Neighbourhoods.json";
 
 const TorontoPage = () => {
   const [neighbourhood, setNeighbourhood] = useState(0);
