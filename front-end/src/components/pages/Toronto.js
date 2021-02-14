@@ -5,7 +5,6 @@ import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'r
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
 import neighbourhoods from "../../Datasets/Neighbourhoods.geojson"
-import L from 'leaflet'
 
 const TorontoPage = () => {
   const [neighbourhood, setNeighbourhood] = useState(0);
@@ -41,9 +40,6 @@ const TorontoPage = () => {
     dataParsed[1][current["Neighbourhood Id"]] = current['Social Housing Units']
     dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
   })
-
-  
-  // const neighbourhoodsGeoJSON = JSON.parse(neighbourhoods);
 
   return (
     <div>
@@ -86,15 +82,15 @@ const TorontoPage = () => {
       </Container>
         
         
-      {/* <Box height="1000" width="1000">
+      <Box height="1000" width="1000">
         <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <GeoJSON data={neighbourhoods}/>
+          <GeoJSON data={neighbourhoods.features}/>
         </MapContainer>
-      </Box> */}
+      </Box>
 
       <BarGraph dataset={dataParsed} id={neighbourhood} />
 
