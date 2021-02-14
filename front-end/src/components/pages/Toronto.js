@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { Container, Flex, Heading, Box, Text, Select, Spacer, Center, Divider, Image } from '@chakra-ui/react';
+import { Container, Flex, Heading, Box, Text, Select, Center, Image, OrderedList, ListItem } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
@@ -26,6 +26,7 @@ const TorontoPage = () => {
       "statistic": "# of families on waitlist for housing units"
     }
   ];
+  var sortedWaitingList = [];
 
   torontoSocialHousingData.forEach((current) => {
     if(current['Social Housing Units'] == 0 && current['Social Housing Waiting List'] > 0){
@@ -37,11 +38,16 @@ const TorontoPage = () => {
     dataParsed[0][current["Neighbourhood Id"]] = current['Rent Bank Applicants']
     dataParsed[1][current["Neighbourhood Id"]] = current['Social Housing Units']
     dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
+    sortedWaitingList.push({
+      "name": current.Neighbourhood,
+      "value": current['Social Housing Waiting List']
+    });
   })
+
+  sortedWaitingList.sort(function(a, b){return b.value - a.value});
 
   return (
     <div>
-
       <Container marginBottom="10" centerContent>
         <Image
             w = '500px' mx = 'auto' my = {-30}
@@ -53,10 +59,19 @@ const TorontoPage = () => {
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
             <Text fontSize="2xl">Neighbourhoods with 50% more people on the waitlist than the number of housing units.</Text>
+            <Heading fontSize="3xl" marginTop="50">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
+            <Text fontSize="2xl">Average property price</Text>
           </Box>
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
-            <Heading fontSize="3xl">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
-            <Text fontSize="2xl">Average property price</Text>
+          <Heading fontSize="3xl">Top 5 Neighbourhood in need of Housing</Heading>
+            <OrderedList>
+              <ListItem><b>{sortedWaitingList[0].name}</b> <br/> WaitList Length: {sortedWaitingList[0].value}</ListItem>
+              <ListItem><b>{sortedWaitingList[1].name}</b> <br/> WaitList Length: {sortedWaitingList[1].value}</ListItem>
+              <ListItem><b>{sortedWaitingList[2].name}</b> <br/> WaitList Length: {sortedWaitingList[2].value}</ListItem>
+              <ListItem><b>{sortedWaitingList[3].name}</b> <br/> WaitList Length: {sortedWaitingList[3].value}</ListItem>
+              <ListItem><b>{sortedWaitingList[4].name}</b> <br/> WaitList Length: {sortedWaitingList[4].value}</ListItem>
+            </OrderedList>
+            
           </Box>
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
           <LineChart width={650} height={250} data={overallSocialHousingData}>
