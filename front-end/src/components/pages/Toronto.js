@@ -41,7 +41,7 @@ const TorontoPage = () => {
 
   return (
     <div>
-        <Center> <Heading margin="2" fontSize="4xl">Toronto Housing Overview</Heading> </Center>
+        <Center> <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> </Center>
         <Flex flexDirection="row">
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>

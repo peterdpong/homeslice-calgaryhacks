@@ -27,7 +27,7 @@ function App() {
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">About The Problem</Heading>
                 <Box borderRadius="lg" bgColor="gray.100" padding="5">
-                  <Text fontSize="lg"> In major Canadian cities, there exists a rising issue of <Text as="b">poverty and homelessness.</Text>
+                  <Text fontSize="lg"> In major Canadian cities, there exists a rising issue of <Text as="b">poverty and homelessness. </Text>
                   Even though these are increasing problems within our society, there is a severe lack of social housing to help counter
                   these difficulties that many Canadians face.
                   </Text>
@@ -73,7 +73,7 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 630.2 km squared</Text>
 
               <Center padding="3">
-              <Link to="/toronto"> <Button colorScheme = "blue"> 
+              <Link href="https://homeslice.tech/toronto" isExternal> <Button colorScheme = "blue"> 
               Click here
               </Button> </Link>
               </Center>
@@ -92,7 +92,7 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 115 km squared</Text>
 
               <Center padding="3">
-              <Link to="/toronto"> <Button colorScheme = "blue"> 
+              <Link href="https://homeslice.tech/toronto" isExternal>> <Button colorScheme = "blue"> 
               Click here
               </Button> </Link>
               </Center>
@@ -110,7 +110,7 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 825.3 km squared</Text>
 
               <Center padding="3">
-              <Link to="/toronto"> <Button colorScheme = "blue"> 
+              <Link href="https://homeslice.tech/toronto" isExternal> <Button colorScheme = "blue"> 
               Click here
               </Button> </Link>
               </Center>
