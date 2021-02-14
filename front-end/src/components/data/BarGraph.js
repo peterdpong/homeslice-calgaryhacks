@@ -5,13 +5,13 @@ const BarGraph = ({dataset, xdatakey, ydatakey}) => {
   return(
     <BarChart
         width={600}
-        height={300}
+        height={500}
         data={dataset}
         margin={{ top: 5, right: 30, left: 20, bottom: 5}}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={xdatakey} />
-        <YAxis />
+        <YAxis domain={[0, 'dataMax']}/>
         <Tooltip />
         <Legend />
         <Bar dataKey={ydatakey} fill="#DDA0DD" />
