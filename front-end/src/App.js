@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar"
-import { Container, Heading, Text, Button, Box, Image } from '@chakra-ui/react'
+import { Container, Flex, Heading, Text, Button, Box, Image, Center} from '@chakra-ui/react'
 import { Search2Icon } from '@chakra-ui/icons'
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import TorontoPage from "./components/pages/Toronto";
@@ -51,7 +51,74 @@ function App() {
 
           </Route>
           <Route path="/explore">
-            <Text fontSize="lg">INFO ABOUT Solution</Text>
+            
+            <Center fontSize='lg' padding="5">
+            HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
+            <br />
+            Click below to go to the City's Data Page :)
+            </Center>
+
+            <Flex color="white" padding="2">
+
+            <Box variant="Outline" flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
+              <Center fontWeight="bold" color="Black" padding="1">
+                TORONTO
+              </Center>
+
+              <Image src="toronto.png" padding="1"/>
+
+              <Text padding="1" color="black">
+                Capital of Ontario, the largest city in Canada. 
+              </Text>
+              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 2.93 Million</Text>
+              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 630.2 km squared</Text>
+
+              <Center padding="3">
+                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              Click here
+              </Button>
+              </Center>
+
+            </Box>
+
+            <Box flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
+              <Center fontWeight="bold" color="Black" padding="1">
+                VANCOUVER
+              </Center>
+              <Image src="vancouver.png" padding="1"/>
+              <Text padding="1" color="black">
+                Where the ocean meets the mountains. 
+              </Text>
+              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 0.7 Million</Text>
+              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 115 km squared</Text>
+
+              <Center padding="3">
+                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              Click here
+              </Button>
+              </Center>
+            </Box>
+
+            <Box flex="1" bg="#CBD5E0" borderRadius="lg" padding="3" margin="2">
+              <Center fontWeight="bold" color="Black" padding="1">
+                CALGARY
+              </Center>
+              <Image src="calgary.png" padding="1"/>
+              <Text padding="1" color="black">
+                Albera's biggest city, the city of Banff.
+              </Text>
+              <Text padding="1" color="black"> <Text as="b"> Population:</Text> 1.3 Million</Text>
+              <Text padding="1" color="black"> <Text as="b"> Area:</Text> 825.3 km squared</Text>
+
+              <Center padding="3">
+                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              Click here
+              </Button>
+              </Center>
+            </Box>
+
+            </Flex>
+
           </Route>
           
           
