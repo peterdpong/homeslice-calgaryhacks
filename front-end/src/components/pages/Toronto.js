@@ -47,7 +47,7 @@ const TorontoPage = () => {
   })
 
   
-  const neighbourhoodsGeoJSON = new L.geoJSON(JSON.parse(neighbourhoods));
+  // const neighbourhoodsGeoJSON = JSON.parse(neighbourhoods);
 
   return (
     <div>
@@ -90,15 +90,15 @@ const TorontoPage = () => {
       </Container>
         
         
-      <Box height="1000" width="1000">
+      {/* <Box height="1000" width="1000">
         <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <GeoJSON data={neighbourhoodsGeoJSON}/>
+          <GeoJSON data={neighbourhoods}/>
         </MapContainer>
-      </Box>
+      </Box> */}
 
       <BarGraph dataset={dataParsed} id={neighbourhood} />
 
