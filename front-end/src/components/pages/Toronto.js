@@ -1,11 +1,11 @@
 import React from 'react';
 import BarGraph from '../data/BarGraph';
 import {torontoSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { RadarChart } from 'recharts';
+import RadarChart from '../data/BarGraph';
 
 const TorontoPage = () => {
     return (
-        <RadarChart dataset={torontoSocialHousingData}/>
+        <RadarChart dataset={torontoSocialHousingData[0]}/>
     )
 }
 
