@@ -81,7 +81,7 @@ const TorontoPage = () => {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <GeoJSON data={neighbourhoods.features}/>
+            <GeoJSON data={neighbourhoods.features} onEachFeature={function(feature,layer) {return layer.bindPopup(feature.properties.AREA_NAME)}} />
           </MapContainer>
           <BarGraph dataset={dataParsed} id={neighbourhood}/>
         </Flex>
