@@ -4,7 +4,7 @@ import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar} from 'recha
 const BarGraph = ({dataset, id}) => {
   return(
     <BarChart
-        width={1000}
+        width={800}
         height={500}
         data={dataset}
         margin={{ top: 5, right: 30, left: 20, bottom: 5}}

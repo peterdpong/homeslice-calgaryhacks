@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/react';
+import { Container, Flex, Heading, Box, Text, Select, Spacer, Center, Divider } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import BarGraph from '../data/BarGraph';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
@@ -41,18 +41,17 @@ const TorontoPage = () => {
 
   return (
     <div>
-      <Container marginBottom="10" centerContent>
-        <Heading margin="5" fontSize="4xl">Toronto Housing Overview</Heading>
+        <Center> <Heading margin="2" fontSize="4xl">Toronto Housing Overview</Heading> </Center>
         <Flex flexDirection="row">
-          <Box flex="1" textAlign="center" marginInline="100">
+          <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
             <Text fontSize="2xl">Neighbourhoods > 50% Units to Waiting List</Text>
           </Box>
-          <Box flex="1" textAlign="center" marginInline="100">
+          <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
             <Text fontSize="2xl">Average property price</Text>
           </Box>
-          <Box flex="1" textAlign="center" marginInline="100">
+          <Box flex="1" my = {7} textAlign="center" marginInline="100">
           <LineChart width={650} height={250} data={overallSocialHousingData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
@@ -64,18 +63,17 @@ const TorontoPage = () => {
             <Text>Number of people on waitlist for Social Housing</Text>
           </Box>
         </Flex>
-      </Container>
 
-        <Flex marginInline="20rem" flexDirection="row">
-          <Heading margin="5" fontSize="3xl">Specific Neighbourhood Data</Heading>
-          <Select onChange={onChangeNeighbourhood}>
+        <Center>
+          <Heading padding = "3" margin="3" fontSize="3xl">Specific Neighbourhood Data</Heading>
+          <Select variant = "filled" onChange={onChangeNeighbourhood} padding = "2">
             {torontoSocialHousingData.map((element) => {
               return (
                 <option key={element['Neighbourhood Id']} value={element['Neighbourhood Id']}>{element.Neighbourhood}</option>
               )
             })}
           </Select>
-        </Flex>
+          </Center>
         
         <Flex>
           <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
