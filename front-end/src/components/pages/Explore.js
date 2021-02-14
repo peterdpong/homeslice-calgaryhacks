@@ -6,10 +6,11 @@ const ExplorePage = () => {
   return(
     <div>
       
-      <Center fontSize='lg' padding="5">
-      HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
-      Click below to go to the City's Data Page.
-      </Center>
+      <Container centerContent padding="5">
+        <Heading fontWeight="extrabold" fontSize="4xl">Explore</Heading> 
+        <Text>HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
+        Click below to go to the City's Data Page.</Text>
+      </Container>
 
         <Flex color="white" padding="2">
 
