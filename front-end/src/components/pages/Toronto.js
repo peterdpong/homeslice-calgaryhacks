@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
 import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
-import myMap from '../data/Map';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const TorontoPage = () => {
   const [neighbourhood, setNeighbourhood] = useState("");
@@ -41,9 +41,11 @@ const TorontoPage = () => {
     dataParsed[3][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
   })
 
+  const position = [51.505, -0.09]
+
 
   return (
-    <Container>
+    <div>
       <Container marginBottom="10" centerContent>
         <Heading margin="5" fontSize="4xl">Toronto Housing Overview</Heading>
         <Flex flexDirection="row">
@@ -69,6 +71,7 @@ const TorontoPage = () => {
         </Flex>
       </Container>
 
+      <Container centerContent>
         <Flex flexDirection="row">
           <Heading margin="5" fontSize="3xl">Specific Neighbourhood Data</Heading>
           <Select placeholder="Select neighbourhood" onChange={onChangeNeighbourhood}>
@@ -79,13 +82,26 @@ const TorontoPage = () => {
             })}
           </Select>
         </Flex>
+      </Container>
+        
+        
+      <Box height="600" width="600">
+        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </Box>
         
       
 
-      <myMap/>
-      {/* <BarGraph dataset={torontoSocialHousingData} xdatakey="Neighbourhood" ydatakey="Social Housing Waiting List"/> */}
-
-    </Container>
+    </div>
   )
 }
 
