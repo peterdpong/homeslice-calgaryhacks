@@ -28,8 +28,6 @@ function App() {
                   <Text fontSize="lg">INFO ABOUT Problem</Text>
                 </Box>
             </Box>
-    
-            
 
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">HomeSlice's Goal</Heading>
