@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar"
-import { Container, Heading, Text, Button, Box } from '@chakra-ui/react'
-import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom'
+import { Container, Heading, Text, Button, Box, Image } from '@chakra-ui/react'
+import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import TorontoPage from "./components/pages/Toronto";
 
 function App() {
