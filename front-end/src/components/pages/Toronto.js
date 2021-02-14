@@ -79,7 +79,7 @@ const TorontoPage = () => {
           <Select placeholder="Select neighbourhood" onChange={onChangeNeighbourhood}>
             {torontoSocialHousingData.map((element) => {
               return (
-                <option value={element['Neighbourhood Id']}>{element.Neighbourhood}</option>
+                <option key={element['Neighbourhood Id']} value={element['Neighbourhood Id']}>{element.Neighbourhood}</option>
               )
             })}
           </Select>
