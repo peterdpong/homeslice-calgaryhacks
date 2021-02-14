@@ -3,13 +3,16 @@ import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets
 import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/react';
 import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import BarGraph from '../data/BarGraph';
 
 const TorontoPage = () => {
-  const [neighbourhood, setNeighbourhood] = useState("");
+  const [neighbourhood, setNeighbourhood] = useState(0);
 
   const onChangeNeighbourhood = (event) => {
-    setNeighbourhood(event.currentTarget.value);
+    setNeighbourhood(event.currentTarget.value-1);
   }
+
+  const currentNeigbourhood = torontoSocialHousingData[neighbourhood];
 
   var neighbourhoodsWithFiftyPercentDiff = [];
   var sumAveragePrice = 0;
@@ -98,8 +101,8 @@ const TorontoPage = () => {
           </Marker>
         </MapContainer>
       </Box>
-        
-      
+
+      <BarGraph dataset={dataParsed} id={neighbourhood} />
 
     </div>
   )
