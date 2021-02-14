@@ -20,9 +20,6 @@ const TorontoPage = () => {
   var sumAveragePrice = 0;
   var dataParsed = [
     {
-      "statistic": "homePrices"
-    },
-    {
       "statistic": "rentBankApplicant"
     },
     {
@@ -40,10 +37,9 @@ const TorontoPage = () => {
       neighbourhoodsWithFiftyPercentDiff.push(current);
     }
     sumAveragePrice += current['Home Prices'];
-    dataParsed[0][current["Neighbourhood Id"]] = current['Home Prices']
-    dataParsed[1][current["Neighbourhood Id"]] = current['Rent Bank Applicants']
-    dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Units']
-    dataParsed[3][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
+    dataParsed[0][current["Neighbourhood Id"]] = current['Rent Bank Applicants']
+    dataParsed[1][current["Neighbourhood Id"]] = current['Social Housing Units']
+    dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
   })
 
   

@@ -14,7 +14,7 @@ const BarGraph = ({dataset, id}) => {
         <YAxis domain={[0, 1000]}/>
         <Tooltip />
         <Legend />
-        <Bar dataKey={id+1} fill="#DDA0DD" />
+        <Bar dataKey={id+1} fill="#3182CE" />
     </BarChart>
   )
 }
