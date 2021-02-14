@@ -41,14 +41,14 @@ const TorontoPage = () => {
 
   return (
     <div>
-        <Center> 
-          <Image
+
+      <Container marginBottom="10" centerContent>
+        <Image
             w = '500px' mx = 'auto' my = {-30}
             src = './torontoSil.png'
             />
-          <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> 
-        </Center>
-      <Container marginBottom="10" centerContent>
+        <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> 
+      </Container>
         <Flex flexDirection="row">
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
@@ -92,7 +92,6 @@ const TorontoPage = () => {
           </MapContainer>
           <BarGraph dataset={dataParsed} id={neighbourhood}/>
         </Flex>
-      </Container>
     </div>
   )
 }
