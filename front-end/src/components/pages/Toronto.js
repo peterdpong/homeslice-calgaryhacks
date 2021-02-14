@@ -13,19 +13,17 @@ const TorontoPage = () => {
     setNeighbourhood(event.currentTarget.value-1);
   }
 
-  const currentNeigbourhood = torontoSocialHousingData[neighbourhood];
-
   var neighbourhoodsWithFiftyPercentDiff = [];
   var sumAveragePrice = 0;
   var dataParsed = [
     {
-      "statistic": "rentBankApplicant"
+      "statistic": "Rental Bank Applicants"
     },
     {
-      "statistic": "housingUnits"
+      "statistic": "Social Housing Units"
     },
     {
-      "statistic": "socialHousingWaitingList"
+      "statistic": "# of families on waitlist for housing units"
     }
   ];
 
@@ -68,10 +66,9 @@ const TorontoPage = () => {
         </Flex>
       </Container>
 
-      <Container centerContent>
-        <Flex flexDirection="row">
+        <Flex marginInline="20rem" flexDirection="row">
           <Heading margin="5" fontSize="3xl">Specific Neighbourhood Data</Heading>
-          <Select placeholder="Select neighbourhood" onChange={onChangeNeighbourhood}>
+          <Select onChange={onChangeNeighbourhood}>
             {torontoSocialHousingData.map((element) => {
               return (
                 <option key={element['Neighbourhood Id']} value={element['Neighbourhood Id']}>{element.Neighbourhood}</option>
@@ -79,20 +76,17 @@ const TorontoPage = () => {
             })}
           </Select>
         </Flex>
-      </Container>
         
-        
-      <Box height="1000" width="1000">
-        <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <GeoJSON data={neighbourhoods.features}/>
-        </MapContainer>
-      </Box>
-
-      <BarGraph dataset={dataParsed} id={neighbourhood}/>
+        <Flex>
+          <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <GeoJSON data={neighbourhoods.features}/>
+          </MapContainer>
+          <BarGraph dataset={dataParsed} id={neighbourhood}/>
+        </Flex>
 
     </div>
   )
