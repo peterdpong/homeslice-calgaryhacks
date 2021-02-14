@@ -45,7 +45,7 @@ const TorontoPage = () => {
         <Flex flexDirection="row">
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
-            <Text fontSize="2xl">Neighbourhoods > 50% Units to Waiting List</Text>
+            <Text fontSize="2xl">Neighbourhoods with 50% more people on the waitlist than the number of housing units.</Text>
           </Box>
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
