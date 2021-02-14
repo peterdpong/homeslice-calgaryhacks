@@ -55,7 +55,7 @@ const VancouverPage = () => {
     <div>
     <Container marginBottom="10" centerContent>
       <Image
-            w = '500px' mx = 'auto' my = {-30}
+            w = '500px' mx = 'auto' my = {-50}
             src = './vancouverSil.png'
             />
       <Heading margin="5" fontSize="4xl">Vancouver Housing Overview</Heading>
