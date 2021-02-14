@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Text, Button, Stack, Link } from "@chakra-ui/react";
+import { Search2Icon } from '@chakra-ui/icons'
 import { Link as ReactLink} from 'react-router-dom'
 import Logo from './Logo'
 
@@ -78,7 +79,6 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/about">About Us</MenuItem>
         <MenuItem to="/explore" isLast>
           <Button
             size="sm"
@@ -88,7 +88,7 @@ const MenuLinks = ({ isOpen }) => {
             _hover={{
               bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
             }}
-          >
+          > <Search2Icon marginRight = "2" />
             Explore Cities
           </Button>
         </MenuItem>

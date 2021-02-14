@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar"
 import { Container, Heading, Text, Button, Box, Image } from '@chakra-ui/react'
+import { Search2Icon } from '@chakra-ui/icons'
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import TorontoPage from "./components/pages/Toronto";
 
@@ -14,7 +15,8 @@ function App() {
             <Container centerContent>
               <Heading fontSize="4xl">Welcome to HomeSlice</Heading>
               <Text fontSize="md">Visualizing housing data to tackle housing problems in Canada. </Text>
-              <Link to="/explore"> <Button colorScheme = "blue" size="lg" m="5">Explore cities</Button> </Link>
+              <Link to="/explore"> <Button colorScheme = "blue" size="lg" m="5"> <Search2Icon marginRight = "2" /> 
+              Explore cities</Button> </Link>
             </Container>
 
             <Image
