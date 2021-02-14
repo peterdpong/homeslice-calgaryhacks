@@ -1,5 +1,6 @@
 import React from 'react';
-import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar} from 'recharts'
+import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar} from 'recharts'
+import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
 
 const BarGraph = ({dataset, id}) => {
   return(
@@ -13,7 +14,6 @@ const BarGraph = ({dataset, id}) => {
         <XAxis dataKey="statistic"/>
         <YAxis domain={[0, 1000]}/>
         <Tooltip />
-        <Legend />
         <Bar dataKey={id+1} fill="#3182CE"/>
     </BarChart>
   )
