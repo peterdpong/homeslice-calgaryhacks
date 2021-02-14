@@ -9,6 +9,21 @@ const TorontoPage = () => {
 
   var neighbourhoodsWithFiftyPercentDiff = [];
   var sumAveragePrice = 0;
+  var dataParsed = [
+    {
+      "statistic": "homePrices"
+    },
+    {
+      "statistic": "rentBankApplicant"
+    },
+    {
+      "statistic": "housingUnits"
+    },
+    {
+      "statistic": "socialHousingWaitingList"
+    }
+  ];
+
   torontoSocialHousingData.forEach((current) => {
     if(current['Social Housing Units'] == 0 && current['Social Housing Waiting List'] > 0){
       neighbourhoodsWithFiftyPercentDiff.push(current);
@@ -16,10 +31,14 @@ const TorontoPage = () => {
       neighbourhoodsWithFiftyPercentDiff.push(current);
     }
     sumAveragePrice += current['Home Prices'];
+    dataParsed[0][current["Neighbourhood Id"]] = current['Home Prices']
+    dataParsed[1][current["Neighbourhood Id"]] = current['Rent Bank Applicants']
+    dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Units']
+    dataParsed[3][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
   })
 
   return (
-    <Container centerContent>
+    <Container>
       <Container>
         <Heading margin="5" fontSize="4xl">Toronto Housing Overview</Heading>
         <Flex flexDirection="row">
