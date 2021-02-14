@@ -5,7 +5,7 @@ import {Link as ReactLink} from 'react-router-dom'
 
 export default function Logo(props) {
   return (
-    <Box {...props} as = "Button"> 
+    <Box {...props}> 
     <Link as = {ReactLink} to="/">
       <Image
       src = './HomeSlice.png'
