@@ -73,7 +73,7 @@ const TorontoPage = () => {
             </OrderedList>
             
           </Box>
-          <Box flex="1" my = {7} textAlign="center" marginInline="100">
+          <Box flex="1" my = {7} textAlign="center">
           <LineChart width={650} height={250} data={overallSocialHousingData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
@@ -113,7 +113,7 @@ const TorontoPage = () => {
                 console.log(neighbourhood == feature.properties.AREA_SHORT_CODE);
                 if (parseInt(neighbourhood) + 1 == parseInt(feature.properties.AREA_SHORT_CODE)) {return {color:"#ff0000"}} else {return {color:"#24ff1c"}}}}/>
           </MapContainer>
-          <BarGraph dataset={dataParsed} id={neighbourhood}/>
+          <BarGraph dataset={dataParsed} xKey="statistic" barKey={neighbourhood + 1}/>
         </Flex>
     </div>
   )

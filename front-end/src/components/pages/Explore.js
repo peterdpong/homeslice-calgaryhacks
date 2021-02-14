@@ -69,7 +69,7 @@ const ExplorePage = () => {
 
           <Center padding="3">
 
-          <Button as="a" href="https://homeslice.tech/toronto" colorScheme = "blue"> 
+          <Button as="a" href="https://homeslice.tech/calgary" colorScheme = "blue"> 
           Click here
           </Button>
 

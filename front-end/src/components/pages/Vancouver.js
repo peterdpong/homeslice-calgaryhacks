@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Heading, Flex, Box, Text, Image } from '@chakra-ui/react'
 import { PieChart, Pie, Tooltip, Legend, Cell, ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Line } from 'recharts'
 import data from '../../Datasets/NonMarketHousingVancouver.json'
+import BarGraph from '../data/BarGraph'
 
 const VancouverPage = () => {
   const COLORS = ["#3182CE", "#EF5350", "#00E676", "#5E35B1"]
@@ -24,6 +25,21 @@ const VancouverPage = () => {
     }
   ]
 
+  var clientData = [
+    {
+      "name": "Families",
+      "value": 0
+    },
+    {
+      "name": "Seniors",
+      "value": 0
+    },
+    {
+      "name": "Others",
+      "value": 0
+    }
+  ]
+
   var yearInfo = []
 
   data.forEach((element) => {
@@ -36,6 +52,10 @@ const VancouverPage = () => {
     } else {
       projectsData[3].value++;
     }
+    clientData[0].value += element.fields.clientele_families;
+    clientData[1].value += element.fields.clientele_seniors;
+    clientData[2].value += element.fields.clientele_other;
+
     var obj = yearInfo.find((o, i) => {
       if (o.year === element.fields.occupancy_year && element.fields.occupancy_year != undefined) {
         yearInfo[i] = {"year": element.fields.occupancy_year, "count": o.count + 1};
@@ -50,6 +70,7 @@ const VancouverPage = () => {
       return true;
     }
   })
+
 
   return (
     <div>
@@ -88,7 +109,8 @@ const VancouverPage = () => {
         <Text fontSize="2xl"># of Non-Social Housing Opened</Text>
       </Box>
       <Box flex="1" textAlign="center">
-        <Text>Number of people on waitlist for Social Housing</Text>
+        <BarGraph dataset={clientData} xKey="name" barKey="value"/>
+        <Text>Category of people who use these homes</Text>
       </Box>
     </Flex>
 

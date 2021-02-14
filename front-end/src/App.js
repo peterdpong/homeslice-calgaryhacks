@@ -6,6 +6,7 @@ import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import TorontoPage from "./components/pages/Toronto";
 import ExplorePage from './components/pages/Explore';
 import VancouverPage from './components/pages/Vancouver';
+import CalgaryPage from './components/pages/Calgary';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route path="/vancouver">
             <VancouverPage/>
+          </Route>
+          <Route path="/calgary">
+            <CalgaryPage/>
           </Route>
           <Route path="/explore">
             <ExplorePage/>
