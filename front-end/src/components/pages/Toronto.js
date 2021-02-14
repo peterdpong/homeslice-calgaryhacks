@@ -3,7 +3,8 @@ import BarGraph from '../data/BarGraph';
 import RadarGraph from '../data/RadarGraph';
 import {torontoSocialHousingData} from '../../Datasets/SocialHousingData2011';
 import { Container, Flex, Heading, Box, Text, systemProps } from '@chakra-ui/react';
-import { RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts'
+import { RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts';
+import myMap from '../data/Map';
 
 const TorontoPage = () => {
 
@@ -58,7 +59,7 @@ const TorontoPage = () => {
       
       
 
-
+      <myMap/>
       {/* <BarGraph dataset={torontoSocialHousingData} xdatakey="Neighbourhood" ydatakey="Social Housing Waiting List"/> */}
     </Container>
   )
