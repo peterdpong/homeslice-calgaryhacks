@@ -54,8 +54,7 @@ function App() {
             
             <Center fontSize='lg' padding="5">
             HomeSlice currently offers our service to 3 cities in Canada, hoping to expand more in the near future.
-            <br />
-            Click below to go to the City's Data Page :)
+            Click below to go to the City's Data Page.
             </Center>
 
             <Flex color="white" padding="2">
@@ -74,9 +73,9 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 630.2 km squared</Text>
 
               <Center padding="3">
-                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              <Link to="/toronto"> <Button colorScheme = "blue"> 
               Click here
-              </Button>
+              </Button> </Link>
               </Center>
 
             </Box>
@@ -93,9 +92,9 @@ function App() {
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 115 km squared</Text>
 
               <Center padding="3">
-                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              <Link to="/toronto"> <Button colorScheme = "blue"> 
               Click here
-              </Button>
+              </Button> </Link>
               </Center>
             </Box>
 
@@ -105,15 +104,15 @@ function App() {
               </Center>
               <Image src="calgary.png" padding="1"/>
               <Text padding="1" color="black">
-                Albera's biggest city, the city of Banff.
+                Alberta's biggest city, as well as Canada's sunniest.
               </Text>
               <Text padding="1" color="black"> <Text as="b"> Population:</Text> 1.3 Million</Text>
               <Text padding="1" color="black"> <Text as="b"> Area:</Text> 825.3 km squared</Text>
 
               <Center padding="3">
-                <Button as="a" variant="outline" href="https://homeslice.tech/explore" color="black">
+              <Link to="/toronto"> <Button colorScheme = "blue"> 
               Click here
-              </Button>
+              </Button> </Link>
               </Center>
             </Box>
 
