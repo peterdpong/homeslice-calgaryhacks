@@ -2,10 +2,10 @@ import React from 'react';
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar} from 'recharts'
 import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
 
-const BarGraph = ({dataset, xKey, barKey}) => {
+const BarGraph = ({dataset, xKey, barKey, width}) => {
   return(
     <BarChart
-        width={800}
+        width={width}
         height={500}
         data={dataset}
         margin={{ top: 5, right: 30, left: 20, bottom: 5}}

@@ -79,9 +79,9 @@ const VancouverPage = () => {
             w = '500px' mx = 'auto' my = {-50}
             src = './vancouverSil.png'
             />
-      <Heading margin="5" fontSize="4xl">Vancouver Housing Overview</Heading>
+      <Heading fontSize="4xl">Vancouver Housing Overview</Heading>
     </Container>
-    <Flex flexDirection="row">
+    <Flex flexDirection="row" marginInline="5rem">
       <Box flex="1" textAlign="center">
         <ResponsiveContainer width="90%" height="90%">
           <PieChart  margin={{ top: 0, left: 0, right: 0, bottom: 0 }} width={350} height={350}>
@@ -109,7 +109,7 @@ const VancouverPage = () => {
         <Text fontSize="2xl"># of Non-Social Housing Opened</Text>
       </Box>
       <Box flex="1" textAlign="center">
-        <BarGraph dataset={clientData} xKey="name" barKey="value"/>
+        <BarGraph dataset={clientData} xKey="name" barKey="value" width={600}/>
         <Text>Category of people who use these homes</Text>
       </Box>
     </Flex>

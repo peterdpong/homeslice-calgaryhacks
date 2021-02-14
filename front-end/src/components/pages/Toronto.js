@@ -53,9 +53,9 @@ const TorontoPage = () => {
             w = '500px' mx = 'auto' my = {-30}
             src = './torontoSil.png'
             />
-        <Heading margin="2" fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> 
+        <Heading fontWeight="extrabold" fontSize="4xl">Toronto Housing Overview</Heading> 
       </Container>
-        <Flex flexDirection="row">
+        <Flex flexDirection="row" marginInline="5rem">
           <Box flex="1" my = {7} textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
             <Text fontSize="2xl">Neighbourhoods with 50% more people on the waitlist than the number of housing units.</Text>
@@ -86,7 +86,7 @@ const TorontoPage = () => {
           </Box>
         </Flex>
 
-        <Center>
+        <Center marginInline="5rem">
           <Heading padding = "3" margin="3" fontSize="3xl">Specific Neighbourhood Data</Heading>
           <Select variant = "filled" onChange={onChangeNeighbourhood} padding = "2">
             {torontoSocialHousingData.map((element) => {
@@ -95,9 +95,9 @@ const TorontoPage = () => {
               )
             })}
           </Select>
-          </Center>
+        </Center>
         
-        <Flex>
+        <Flex marginInline="5rem">
           <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -108,12 +108,9 @@ const TorontoPage = () => {
               onEachFeature={function(feature, layer) {return layer.bindPopup(feature.properties.AREA_NAME)}} 
               key={neighbourhood}
               style={function (feature) {
-                console.log(neighbourhood);
-                console.log(feature.properties.AREA_SHORT_CODE);
-                console.log(neighbourhood == feature.properties.AREA_SHORT_CODE);
                 if (parseInt(neighbourhood) + 1 == parseInt(feature.properties.AREA_SHORT_CODE)) {return {color:"#ff0000"}} else {return {color:"#24ff1c"}}}}/>
           </MapContainer>
-          <BarGraph dataset={dataParsed} xKey="statistic" barKey={neighbourhood + 1}/>
+          <BarGraph dataset={dataParsed} xKey="statistic" barKey={neighbourhood + 1} width={850}/>
         </Flex>
     </div>
   )
