@@ -16,7 +16,7 @@ function App() {
               <Heading fontSize="4xl">Welcome to HomeSlice</Heading>
               <Text fontSize="md">Visualizing housing data to tackle housing problems in Canada. </Text>
               <Link to="/explore"> <Button colorScheme = "blue" size="lg" m="5"> <Search2Icon marginRight = "2" /> 
-              Explore cities</Button> </Link>
+              Explore Cities</Button> </Link>
             </Container>
 
             <Image
@@ -27,7 +27,7 @@ function App() {
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">About The Problem</Heading>
                 <Box borderRadius="lg" bgColor="gray.100" padding="5">
-                  <Text fontSize="lg"> In major Canadian cities, there exists a rising issue of poverty and homelessness.
+                  <Text fontSize="lg"> In major Canadian cities, there exists a rising issue of <Text as="b">poverty and homelessness.</Text>
                   Even though these are increasing problems within our society, there is a severe lack of social housing to help counter
                   these difficulties that many Canadians face.
                   </Text>
@@ -37,7 +37,7 @@ function App() {
             <Box m="5">
                 <Heading fontSize="3xl" marginBottom="2">HomeSlice's Goal</Heading>
                 <Box borderRadius="lg" bgColor="gray.100" padding="5">
-                  <Text fontSize="lg">The goal of HomeSlice is to allow for the visualization of data that deals with the
+                  <Text fontSize="lg">The goal of HomeSlice is to allow for the <Text as="b">visualization of data</Text> that deals with the
                   growing rates of homelessness that plague Canadian communities. Our hope is that this will influence municipal governments
                    to incorporate more social housing units in neighbourhoods that desperately need them. </Text>
                 </Box>
