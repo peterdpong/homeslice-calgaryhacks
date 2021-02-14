@@ -1,14 +1,35 @@
-import React from 'react';
-import BarGraph from '../data/BarGraph';
-import RadarGraph from '../data/RadarGraph';
-import {torontoSocialHousingData} from '../../Datasets/SocialHousingData2011';
-import { Container, Flex, Heading, Box, Text, systemProps } from '@chakra-ui/react';
-import { RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts'
+import React, { useState } from 'react';
+import {torontoSocialHousingData, overallSocialHousingData} from '../../Datasets/SocialHousingData2011';
+import { Container, Flex, Heading, Box, Text, Select, Spacer } from '@chakra-ui/react';
+import { LineChart, CartesianGrid, XAxis, YAxis, Line, Legend, Tooltip } from 'recharts'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
+import neighbourhoods from "../../Datasets/Neighbourhoods.geojson"
+import L from 'leaflet'
 
 const TorontoPage = () => {
+  const [neighbourhood, setNeighbourhood] = useState("");
+
+  const onChangeNeighbourhood = (event) => {
+    setNeighbourhood(event.currentTarget.value);
+  }
 
   var neighbourhoodsWithFiftyPercentDiff = [];
   var sumAveragePrice = 0;
+  var dataParsed = [
+    {
+      "statistic": "homePrices"
+    },
+    {
+      "statistic": "rentBankApplicant"
+    },
+    {
+      "statistic": "housingUnits"
+    },
+    {
+      "statistic": "socialHousingWaitingList"
+    }
+  ];
+
   torontoSocialHousingData.forEach((current) => {
     if(current['Social Housing Units'] == 0 && current['Social Housing Waiting List'] > 0){
       neighbourhoodsWithFiftyPercentDiff.push(current);
@@ -16,32 +37,69 @@ const TorontoPage = () => {
       neighbourhoodsWithFiftyPercentDiff.push(current);
     }
     sumAveragePrice += current['Home Prices'];
+    dataParsed[0][current["Neighbourhood Id"]] = current['Home Prices']
+    dataParsed[1][current["Neighbourhood Id"]] = current['Rent Bank Applicants']
+    dataParsed[2][current["Neighbourhood Id"]] = current['Social Housing Units']
+    dataParsed[3][current["Neighbourhood Id"]] = current['Social Housing Waiting List']
   })
 
+  
+  const neighbourhoodsGeoJSON = new L.geoJSON(JSON.parse(neighbourhoods));
+
   return (
-    <Container centerContent>
-      <Container>
+    <div>
+      <Container marginBottom="10" centerContent>
         <Heading margin="5" fontSize="4xl">Toronto Housing Overview</Heading>
         <Flex flexDirection="row">
-          <Box flex="1" textAlign="center" marginInline="5">
+          <Box flex="1" textAlign="center" marginInline="100">
             <Heading fontSize="3xl">{neighbourhoodsWithFiftyPercentDiff.length} / {torontoSocialHousingData.length}</Heading>
-            <Text>Neighbourhoods > 50% Units to Waiting List</Text>
+            <Text fontSize="2xl">Neighbourhoods > 50% Units to Waiting List</Text>
           </Box>
-          <Box flex="1" textAlign="center" marginInline="5">
+          <Box flex="1" textAlign="center" marginInline="100">
             <Heading fontSize="3xl">${(sumAveragePrice / torontoSocialHousingData.length).toFixed(2)}</Heading>
-            <Text>Average property price</Text>
+            <Text fontSize="2xl">Average property price</Text>
           </Box>
-          <Box flex="1" textAlign="center" marginInline="5">
-            <Text>Number of Neighbourhood > 50% Units to Waiting List</Text>
+          <Box flex="1" textAlign="center" marginInline="100">
+          <LineChart width={650} height={250} data={overallSocialHousingData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="# on Waiting List" stroke="#8884d8" />
+          </LineChart>
+            <Text>Number of people on waitlist for Social Housing</Text>
           </Box>
         </Flex>
       </Container>
-      
+
+      <Container centerContent>
+        <Flex flexDirection="row">
+          <Heading margin="5" fontSize="3xl">Specific Neighbourhood Data</Heading>
+          <Select placeholder="Select neighbourhood" onChange={onChangeNeighbourhood}>
+            {torontoSocialHousingData.map((element) => {
+              return (
+                <option key={element['Neighbourhood Id']} value={element['Neighbourhood Id']}>{element.Neighbourhood}</option>
+              )
+            })}
+          </Select>
+        </Flex>
+      </Container>
+        
+        
+      <Box height="1000" width="1000">
+        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <GeoJSON data={neighbourhoodsGeoJSON}/>
+        </MapContainer>
+      </Box>
+        
       
 
-
-      {/* <BarGraph dataset={torontoSocialHousingData} xdatakey="Neighbourhood" ydatakey="Social Housing Waiting List"/> */}
-    </Container>
+    </div>
   )
 }
 

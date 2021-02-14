@@ -141,3 +141,114 @@ export const torontoSocialHousingData = [
   {"Neighbourhood":"Guildwood","Neighbourhood Id":140,"Home Prices":444309,"Mid-Century Highrise Households":605,"Mid-Century Highrise Households":1020,"Percent Mid-Century Highrise Households":15.3,"Percent Mid-Century Highrise Population":10.4,"Rent Bank Applicants":3,"Social Housing Turnover":0,"Social Housing Units":0,"Social Housing Waiting List":62}
   ]
   
+
+  export const overallSocialHousingData = [
+    {
+      "time": "2009Q1",
+      "# on Waiting List": 67863
+    },
+    {
+      "time": "2009Q2",
+      "# on Waiting List": 69216 
+    },
+    {
+      "time": "2009Q3",
+      "# on Waiting List": 70533 
+    },
+    {
+      "time": "2009Q4",
+      "# on Waiting List": 71498 
+    },
+    {
+      "time": "2010Q1",
+      "# on Waiting List": 72876 
+    },
+    {
+      "time": "2010Q2",
+      "# on Waiting List": 75476 
+    },
+    {
+      "time": "2010Q3",
+      "# on Waiting List": 73920 
+    },
+    {
+      "time": "2010Q4",
+      "# on Waiting List": 76549 
+    },
+    {
+      "time": "2011Q1",
+      "# on Waiting List": 78187 
+    },
+    {
+      "time": "2011Q2",
+      "# on Waiting List": 79218 
+    },
+    {
+      "time": "2011Q3",
+      "# on Waiting List": 80955 
+    },
+    {
+      "time": "2011Q4",
+      "# on Waiting List": 82138 
+    },
+    {
+      "time": "2012Q1",
+      "# on Waiting List": 83681 
+    },
+    {
+      "time": "2012Q2",
+      "# on Waiting List": 85578 
+    },
+    {
+      "time": "2012Q3",
+      "# on Waiting List": 86892 
+    },
+    {
+      "time": "2012Q4",
+      "# on Waiting List": 87486 
+    },
+    {
+      "time": "2013Q1",
+      "# on Waiting List": 87892 
+    },
+    {
+      "time": "2013Q2",
+      "# on Waiting List": 88891 
+    },
+    {
+      "time": "2013Q3",
+      "# on Waiting List": 90157 
+    },
+    {
+      "time": "2013Q4",
+      "# on Waiting List": 90990 
+    },
+    {
+      "time": "2014Q1",
+      "# on Waiting List": 91933 
+    },
+    {
+      "time": "2014Q2",
+      "# on Waiting List": 92214 
+    },
+    {
+      "time": "2014Q3",
+      "# on Waiting List": 91750 
+    },
+    {
+      "time": "2014Q4",
+      "# on Waiting List": 91032 
+    },
+    {
+      "time": "2015Q1",
+      "# on Waiting List": 91950
+    },
+    {
+      "time": "2015Q2",
+      "# on Waiting List": 93515 
+    },
+    {
+      "time": "2015Q3",
+      "# on Waiting List": 95381
+    }
+  ]
