@@ -97,7 +97,7 @@ const TorontoPage = () => {
           </Select>
         </Center>
         
-        <Flex marginInline="5rem">
+        <Flex marginInline="5rem" marginBottom="15">
           <MapContainer center={[43.7184038, -79.5181405]} zoom={11} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
