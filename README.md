@@ -1,5 +1,7 @@
 # HomeSlice
-CalgaryHacks 2021
+**CalgaryHacks 2021**
+
+**Tashan Maniyalaghan, Ethan Zheng, Ji Oh Kim, Joshua Pow, Peter Damrongpiriyapong**
 
 [Check it out!](https://homeslice.tech/)
 
